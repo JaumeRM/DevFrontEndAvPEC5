@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Movies</h1>
+  <ul class="list-group">
+    <a
+      *ngFor="let movie of collection.parts"
+      [routerLink]="['/movie', movie.id]"
+      class="list-group-item list-group-item-action animate__animated animate__bounce animate_fadeIn"
+      >{{ movie.id }} - {{ movie.title }}</a
+    >
+  </ul>
+</div>
