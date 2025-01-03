@@ -1,18 +1,81 @@
-<div class="container mt-5">
-  <div *ngIf="movie" class="row">
-    <div class="col-md-9">
-      <p><strong>Identifier:</strong> {{ movie.id }}</p>
-      <p><strong>Title:</strong> {{ movie.title }}</p>
-      <img
-        style="width: 300px"
-        class="rounded"
-        src="https://image.tmdb.org/t/p/w300//{{ movie.poster_path }}"
-        alt=""
-      />
-    </div>
+<br /><br /><br /><br />
+<section>
+  <div class="container px-md-6">
+    <div class="row">
+      <div class="col-md-3">
+        <div>
+          <img
+            class="img-fluid"
+            src="https://image.tmdb.org/t/p/w300//{{ movie.poster_path }}"
+            alt=""
+            alt="Image-Description"
+          />
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="pl-md-2 pt-4">
+          <div
+            class="row border-bottom border-gray-5600 space-bottom-2 no-gutters mb-4"
+          >
+            <div class="col-md-7 col-lg">
+              <div class="mb-5 mb-md-0">
+                <h6
+                  class="font-size-36 text-black mb-4 pb-1 row align-items-start"
+                >
+                  {{ movie.title }}
+                </h6>
+                <h6
+                  class="font-size-16 text-black mb-4 pb-1 row align-items-start"
+                >
+                  {{ movie.original_title }}
+                </h6>
+                <p
+                  class="font-size-16 text-black mb-4 pb-1 row align-items-start"
+                >
+                  Release: {{ movie.release_date }}
+                </p>
+              </div>
+            </div>
+          </div>
 
-    <div class="col-md-3">
-      <a class="btn btn-danger" routerLink="/">Back</a>
+          <div class="mb-6">
+            <div
+              class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters"
+            >
+              <a class="btn btn-danger" routerLink="/">Back</a>&nbsp;<a
+                class="btn btn-primary"
+                routerLink="/"
+                >More info</a
+              >
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <div class="font-size-26 text-black mb-3 pb-1">
+              Informació tècnica
+            </div>
+            <div
+              class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters"
+            >
+              <div class="col-3">
+                <div class="text-md-left">
+                  <span class="font-size-15 fon-weight-normal text-black"
+                    >Traductor</span
+                  >
+                </div>
+              </div>
+              <div class="col-1">
+                <span class="text-black">...</span>
+              </div>
+              <div class="col-6">
+                <h6 class="font-size-15 font-weight-medium mb-0">
+                  <a href="www.google.ad">BERNAT PUJADAS</a>
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>

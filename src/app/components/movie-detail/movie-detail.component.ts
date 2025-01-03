@@ -19,14 +19,12 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const identifier = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log('Identifier -->', identifier);
-
     this.moviesService.getMovieById(identifier!).subscribe((movie) => {
       if (!movie) {
         this.router.navigateByUrl('/');
       }
       this.movie = movie;
-      console.log('Movie --> ', this.movie);
+      console.log(movie);
     });
   }
 }
