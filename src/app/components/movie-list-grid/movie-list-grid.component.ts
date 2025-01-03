@@ -1,27 +1,28 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Collection } from 'src/app/models/collection.interface';
-import { Movie } from 'src/app/models/movie.interface';
+
+import {
+  animate,
+  query,
+  state,
+  style,
+  stagger,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-movie-list-grid',
   templateUrl: './movie-list-grid.component.html',
   styleUrls: ['./movie-list-grid.component.css'],
+
+  animations: [
+    trigger('photosAnimation', [
+      state('void', style({ transform: 'scalex(500%) scaley(500%)' })),
+      transition('void <=> *', animate(1500)),
+    ]),
+  ],
 })
-export class MovieListGridComponent implements OnInit {
+export class MovieListGridComponent {
   @Input() collection: any;
-  movies: Movie[] = [];
-  displayedColumns: string[] = ['id', 'title'];
-
-  ngOnInit(): void {
-    const movies_tmp = [];
-
-    for (var i in this.collection.parts) {
-      movies_tmp.push({
-        id: this.collection.parts[i].id,
-        title: this.collection.parts[i].title,
-        poster_path: '',
-      });
-    }
-    this.movies = movies_tmp;
-  }
 }

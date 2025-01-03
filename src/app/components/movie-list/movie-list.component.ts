@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from '../../models/movie.interface';
 import { MoviesService } from '../../services/movies.service';
-import { Collection } from 'src/app/models/collection.interface';
 
 @Component({
   selector: 'app-movie-list',
