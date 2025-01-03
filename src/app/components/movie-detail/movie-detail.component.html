@@ -1,15 +1,21 @@
 <br /><br /><br /><br />
-<section>
+<section class="post" style="width: 75%">
   <div class="container px-md-6">
     <div class="row">
       <div class="col-md-3">
         <div>
           <img
             class="img-fluid"
-            src="https://image.tmdb.org/t/p/w300//{{ movie.poster_path }}"
+            src="https://image.tmdb.org/t/p/w500//{{ movie.poster_path }}"
             alt=""
             alt="Image-Description"
           />
+        </div>
+        <div><p>&nbsp;</p></div>
+        <div
+          class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters"
+        >
+          <a class="btn btn-danger" routerLink="/">Back</a>
         </div>
       </div>
       <div class="col-md-9">
@@ -24,55 +30,82 @@
                 >
                   {{ movie.title }}
                 </h6>
-                <h6
-                  class="font-size-16 text-black mb-4 pb-1 row align-items-start"
-                >
-                  {{ movie.original_title }}
-                </h6>
-                <p
-                  class="font-size-16 text-black mb-4 pb-1 row align-items-start"
-                >
-                  Release: {{ movie.release_date }}
-                </p>
               </div>
             </div>
           </div>
 
-          <div class="mb-6">
-            <div
-              class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters"
-            >
-              <a class="btn btn-danger" routerLink="/">Back</a>&nbsp;<a
-                class="btn btn-primary"
-                routerLink="/"
-                >More info</a
-              >
-            </div>
-          </div>
+          <div class="mb-6"></div>
 
           <div class="mb-6">
-            <div class="font-size-26 text-black mb-3 pb-1">
-              Informació tècnica
-            </div>
-            <div
-              class="row align-items-center overflow-auto overflow-md-auto border-bottom border-gray-5600 no-gutters"
-            >
-              <div class="col-3">
-                <div class="text-md-left">
-                  <span class="font-size-15 fon-weight-normal text-black"
-                    >Traductor</span
-                  >
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header
+                style="background-color: cornflowerblue"
+              >
+                <mat-panel-title> Show all details </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <div
+                class="row border-bottom border-gray-5600 space-bottom-2 no-gutters mb-4"
+              >
+                <div class="col-md-7 col-lg">
+                  <p>&nbsp;</p>
+                  <div class="mb-5 mb-md-0">
+                    <h6
+                      class="font-size-16 text-black mb-4 pb-1 row align-items-start"
+                    >
+                      {{ movie.tagline }}
+                    </h6>
+                    <p
+                      class="font-size-16 text-black mb-4 pb-1 row align-items-start"
+                    >
+                      Original: {{ movie.original_title }}
+                    </p>
+                    <p
+                      class="font-size-16 text-black mb-4 pb-1 row align-items-start"
+                    >
+                      Release: {{ movie.release_date }}
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="col-1">
-                <span class="text-black">...</span>
+
+              <div
+                class="row border-bottom border-gray-5600 space-bottom-2 no-gutters mb-4 font-size-16"
+              >
+                <div style="text-align: left">
+                  <p>&nbsp;</p>
+                  <strong>Overview: </strong> {{ movie.overview }}
+                  <p>&nbsp;</p>
+                </div>
               </div>
-              <div class="col-6">
-                <h6 class="font-size-15 font-weight-medium mb-0">
-                  <a href="www.google.ad">BERNAT PUJADAS</a>
-                </h6>
+
+              <div
+                class="row border-bottom border-gray-5600 space-bottom-2 no-gutters mb-4 font-size-16"
+              >
+                <div style="text-align: left">
+                  <p>&nbsp;</p>
+                  <img
+                    class="img-fluid"
+                    src="https://image.tmdb.org/t/p/w300//{{
+                      movie.backdrop_path
+                    }}"
+                    alt=""
+                    alt="Image-Description"
+                  />
+                  <p>&nbsp;</p>
+                </div>
               </div>
-            </div>
+
+              <div
+                class="row border-bottom border-gray-5600 space-bottom-2 no-gutters mb-4 font-size-16"
+              >
+                <div style="text-align: left">
+                  <p>&nbsp;</p>
+                  <strong> Vote average: </strong> {{ movie.vote_average }}
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+            </mat-expansion-panel>
           </div>
         </div>
       </div>
