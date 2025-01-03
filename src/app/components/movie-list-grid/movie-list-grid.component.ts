@@ -9,5 +9,5 @@ import { Movie } from 'src/app/models/movie.interface';
 })
 export class MovieListGridComponent {
   @Input() collection: any;
-  displayedColumns: string[] = ['release_date', 'title', 'id'];
+  displayedColumns: string[] = ['release_date', 'title'];
 }

@@ -1,22 +1,26 @@
 <div class="post">
-  <mat-card-header class="post-header">
-    <mat-card-title-group>
-      <mat-card-title>{{ movie.title }}</mat-card-title>
-      <mat-card-subtitle
-        ><p>
-          <strong>{{ movie.original_title }} - {{ movie.release_date }}</strong>
-        </p>
-      </mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      <img
-        class="rounded"
-        src="https://image.tmdb.org/t/p/w500//{{ movie.backdrop_path }}"
-        alt=""
-      />
-    </p>
-  </mat-card-content>
-  <p class="post-separador"></p>
+  <a [routerLink]="['/movie', movie.id]">
+    <mat-card-header class="post-header">
+      <mat-card-title-group>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle
+          ><p>
+            <strong
+              >{{ movie.original_title }} - {{ movie.release_date }}</strong
+            >
+          </p>
+        </mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <img
+          class="rounded"
+          src="https://image.tmdb.org/t/p/w500//{{ movie.backdrop_path }}"
+          alt=""
+        />
+      </p>
+    </mat-card-content>
+    <p class="post-separador"></p
+  ></a>
 </div>
