@@ -10,13 +10,21 @@ import { Collection } from 'src/app/models/collection.interface';
 })
 export class MovieListComponent {
   collection: any;
+  displayMode: string;
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private moviesService: MoviesService) {
+    this.displayMode = 'list';
+  }
 
   ngOnInit(): void {
     this.moviesService.getAllMovies().subscribe((collection) => {
       console.log(collection.parts);
       this.collection = collection;
     });
+  }
+
+  changeDisplay(mode: string): void {
+    console.debug(`changeDisplay ${mode}`);
+    this.displayMode = mode;
   }
 }
