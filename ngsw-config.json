@@ -36,7 +36,7 @@
   ],
   "dataGroups": [
     {
-      "name": "openlibrary-api",
+      "name": "TMDB API",
       "urls": ["https://api.themoviedb.org/**"],
       "cacheConfig": {
         "maxSize": 50,
